@@ -19,4 +19,10 @@ for(let i = 0; i < 9; i++) {
 let content = document.createElement('div')
 content.classList.add('content')
 content.appendChild(matrix)
+
+let answer = document.createElement('p')
+answer.classList.add('answer')
+answer.innerText = '= 0'
+content.appendChild(answer)
+
 document.body.appendChild(content)

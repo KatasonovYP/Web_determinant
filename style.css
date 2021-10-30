@@ -5,6 +5,7 @@
 .content {
     display: flex;
     justify-content: center;
+    align-items: center;
 }
 .matrix {
     display: flex;
@@ -40,5 +41,8 @@
     background-color:lightcyan;
 }
 .value { 
+    font-size: 50px;
+}
+.answer {
     font-size: 50px;
 }
