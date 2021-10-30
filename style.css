@@ -1,0 +1,44 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+.content {
+    display: flex;
+    justify-content: center;
+}
+.matrix {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: flex-start;
+
+    width: 320px;
+    margin: 10px;
+    padding: 30px;
+
+    border-left: 2px solid #000;
+    border-right: 2px solid #000;
+}
+.cell {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-right: 1px solid #000;
+    border-bottom: 1px solid #000;
+    height: 100px;
+    width: 100px;
+    transition: background-color 0.5s;
+}
+.cell:nth-last-child(3n + 1) {
+    border-right: none;
+}
+.cell:nth-last-child(-n + 3) {
+    border-bottom: none;
+}
+.cell:hover {
+    background-color:lightcyan;
+}
+.value { 
+    font-size: 50px;
+}
