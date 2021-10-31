@@ -10,9 +10,9 @@ matrix.classList.add('matrix')
 for(let i = 0; i < 9; i++) {
     let cell = document.createElement('div')
     cell.classList.add('cell')
-    let value = document.createElement('p')
+    let value = document.createElement('input')
     value.classList.add('value')
-    value.innerText = i
+    value.value = i
     cell.appendChild(value)
     matrix.appendChild(cell)
 }

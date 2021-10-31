@@ -1,6 +1,12 @@
 /*
-
+[x] Рекурсивная реализация определителя
+[x] Обработка определителей 4 и большего рода
+[x] Ввод значений более эстетичным методом
+[] Попытаться получить доступ к ячейкам через ID
+[x] Обновлять инфорацию через метод update()
+[] Общий дизайн
 */
+
 
 function determinant(matrix) {
     if (matrix.length == 2) {
@@ -18,20 +24,20 @@ function determinant(matrix) {
 }
 
 
+function update() {
+    data = []
+    cellTag.forEach(el => {
+        data.push(Number(el.querySelector('input').value))
+    });
+    let matr = [data.slice(0, 3), data.slice(3, 6), data.slice(6, 9)]
+    let det = determinant(matr)
+    let ans = document.body.querySelector('.answer')
+    ans.innerHTML = ' = ' + det
+    return
+}
+
+
 const cellTag = document.querySelectorAll('div.cell')
-
-let data = [1, 2, 3, 4, 5, 6, 7, 8, 9]
-
 cellTag.forEach(element => {
-    element.addEventListener('click', function() {
-        element.querySelector('p').innerText = prompt("Введите число:  ")
-        data = []
-        cellTag.forEach(el => {
-            data.push(Number(el.querySelector('p').innerText))
-        });
-        let matr = [data.slice(0, 3), data.slice(3, 6), data.slice(6, 9)]
-        let det = determinant(matr)
-        let ans = document.body.querySelector('.answer')
-        ans.innerHTML = ' = ' + det
-    })
+    element.addEventListener('change', function() { update() })
 });

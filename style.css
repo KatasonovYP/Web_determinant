@@ -1,6 +1,7 @@
 * {
     margin: 0;
     padding: 0;
+    font-family: montserrat;
 }
 .content {
     display: flex;
@@ -29,20 +30,17 @@
     border-bottom: 1px solid #000;
     height: 100px;
     width: 100px;
-    transition: background-color 0.5s;
+    
+    transition: background-color 0.2s;
 }
-.cell:nth-last-child(3n + 1) {
-    border-right: none;
-}
-.cell:nth-last-child(-n + 3) {
-    border-bottom: none;
-}
-.cell:hover {
-    background-color:lightcyan;
-}
+.cell:nth-last-child(3n + 1) { border-right: none; }
+.cell:nth-last-child(-n + 3) { border-bottom: none; }
+.cell:hover { background-color:lightcyan; }
 .value { 
+    height: 100px;
+    width: 100px;
     font-size: 50px;
+    border: none;
+    text-align: center;
 }
-.answer {
-    font-size: 50px;
-}
+.answer { font-size: 50px; }
