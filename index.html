@@ -1,27 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
-</head>
-<body>
-    <header>
-        <h1>Определитель матрицы</h1>
-    </header>
-    <div class="content">
-        <div class="add-level-button" onclick="add_level()">
-            <p class="add-level-text">Добавить уровень</p>
-        </div>
-        <div class="matrix">
-            <div class="row">
-                <input type="text" class="col" onchange="update()" value="0">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+            <h1>Определитель матрицы</h1>
+        </header>
+        <div class="content">
+            <div class="buttons">
+                <div class="button add-level" onclick="add_level()">
+                    <p>Добавить уровень</p>
+                </div>
+                <div class="button del-level" onclick="del_level()">
+                    <p>Удалить уровень</p>
+                </div>
+            </div>
+            <div class="determinant">
+                <div class="matrix">
+                    <div class="row">
+                        <input
+                            type="text"
+                            class="col"
+                            onchange="update()"
+                            value="0"
+                        />
+                    </div>
+                </div>
+                <p class="answer">= 0</p>
             </div>
         </div>
-        <p class="answer">= 0</p>
-    </div>
-    <script src="./script.js"></script>
-</body>
+        <script src="./script.js"></script>
+    </body>
 </html>
