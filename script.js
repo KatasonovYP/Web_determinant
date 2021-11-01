@@ -8,10 +8,12 @@
 [x] Сделать нормальную структуру проекта
 [x] Сделать div строки в matrix
 [x] динамическое добавление ячеек в структуру
-[] Кнопка удаления ячеек
-[] Ограничитель уровней определителя
+[x] Кнопка удаления ячеек
+[x] Ограничитель уровней определителя
 [] Счётчик уровней для пользователя
 [] Зафиксировать кнопки и счётчик
+[] Дебаг анимации
+[] Рандомное заполнение
 [] Попытаться получить доступ к ячейкам через ID
 [] Общий дизайн
 */
@@ -54,6 +56,8 @@ function add_level() {
         count_of_levels++;
         document.querySelector('div.matrix').style.width =
             count_of_levels + '00px';
+        document.querySelector('div.matrix').style.height =
+            count_of_levels + '00px';
         matrix.forEach((element) => {
             let col = document.querySelector('input.col').cloneNode(true);
             col.value = 0;
@@ -76,6 +80,8 @@ function del_level() {
         let row_tag = document.querySelectorAll('div.row');
         count_of_levels--;
         document.querySelector('div.matrix').style.width =
+            count_of_levels + '00px';
+        document.querySelector('div.matrix').style.height =
             count_of_levels + '00px';
         row_tag.forEach((element) => {
             element.removeChild(element.lastElementChild);
