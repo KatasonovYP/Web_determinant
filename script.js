@@ -36,38 +36,53 @@ function determinant(matrix) {
 
 function update() {
     let data = [];
-    document.querySelectorAll("div.row").forEach((row) => {
+    document.querySelectorAll('div.row').forEach((row) => {
         let tmp = [];
-        row.querySelectorAll("input").forEach((col) => {
+        row.querySelectorAll('input').forEach((col) => {
             tmp.push(Number(col.value));
         });
         data.push(tmp);
     });
-    let ans = document.body.querySelector(".answer");
-    ans.innerHTML = " = " + determinant(data);
+    let ans = document.body.querySelector('.answer');
+    ans.innerHTML = ' = ' + determinant(data);
     return;
 }
 
 function add_level() {
-    let matrix = document.querySelectorAll("div.row");
-    count_of_levels++;
-    document.querySelector("div.matrix").style.width = count_of_levels + "00px";
-    matrix.forEach((element) => {
-        let col = document.querySelector("input.col").cloneNode(true);
-        col.value = 0;
-        element.append(col);
-    });
-    let row = document.querySelector("div.row").cloneNode(true);
-    row.querySelectorAll("input").forEach((element) => {
-        element.value = 0;
-    });
-    document.querySelector("div.matrix").append(row);
-    update();
+    if (count_of_levels < 8) {
+        let matrix = document.querySelectorAll('div.row');
+        count_of_levels++;
+        document.querySelector('div.matrix').style.width =
+            count_of_levels + '00px';
+        matrix.forEach((element) => {
+            let col = document.querySelector('input.col').cloneNode(true);
+            col.value = 0;
+            element.append(col);
+        });
+        let row = document.querySelector('div.row').cloneNode(true);
+        row.querySelectorAll('input').forEach((element) => {
+            element.value = 0;
+        });
+        document.querySelector('div.matrix').append(row);
+        update();
+    }
     return;
 }
 
 function del_level() {
-    
+    if (count_of_levels > 1) {
+        let matrix = document.querySelector('div.matrix');
+        matrix.removeChild(matrix.lastElementChild);
+        let row_tag = document.querySelectorAll('div.row');
+        count_of_levels--;
+        document.querySelector('div.matrix').style.width =
+            count_of_levels + '00px';
+        row_tag.forEach((element) => {
+            element.removeChild(element.lastElementChild);
+        });
+        update();
+    }
+    return;
 }
 
 update();
