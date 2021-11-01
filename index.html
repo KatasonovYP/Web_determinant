@@ -12,36 +12,12 @@
         <h1>Определитель матрицы</h1>
     </header>
     <div class="content">
-        <div class="add-level-button">
+        <div class="add-level-button" onclick="add_level()">
             <p class="add-level-text">Добавить уровень</p>
         </div>
         <div class="matrix">
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
-            </div>
-            <div class="cell">
-                <input type="text" class="value" onchange="update()">
+            <div class="row">
+                <input type="text" class="col" onchange="update()" value="0">
             </div>
         </div>
         <p class="answer">= 0</p>
