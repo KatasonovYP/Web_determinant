@@ -26,8 +26,8 @@
     justify-content: center;
     align-items: center;
 
-    border-right: 1px solid #000;
-    border-bottom: 1px solid #000;
+    /* border-right: 1px solid #000;
+    border-bottom: 1px solid #000; */
     height: 100px;
     width: 100px;
     
@@ -43,4 +43,19 @@
     border: none;
     text-align: center;
 }
-.answer { font-size: 50px; }
+.answer { 
+    margin: 20px;
+    font-size: 50px; 
+}
+.add-level-button {
+    display: flex;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    background:greenyellow;
+    box-shadow: 0 4px 0 darkseagreen;
+}
+.add-level-text {
+    font-size: 30px;
+    font-weight: 500;
+}
